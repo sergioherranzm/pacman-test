@@ -1,34 +1,34 @@
 let pacmanMap = `
 WWWWWWWWWWWWWWWWWWWWWWWWWWWW
-W............WW............W
-W.WWWW.WWWWW.WW.WWWWW.WWWW.W
-W*WWWW.WWWWW.WW.WWWWW.WWWW*W
-W.WWWW.WWWWW.WW.WWWWW.WWWW.W
 W..........................W
-W.WWWW.WW.WWWWWWWW.WW.WWWW.W
-W.WWWW.WW.WWWWWWWW.WW.WWWW.W
-W......WW....WW....WW......W
-WWWWWW.WWWWW.WW.WWWWW.WWWWWW
-WWWWWW.WWWWW.WW.WWWWW.WWWWWW
-WWWWWW.WW..........WW.WWWWWW
-WWWWWW.WW.WWW--WWW.WW.WWWWWW
-WWWWWW.WW.WooooooW.WW.WWWWWW
+W.WWWWW.WWWW.WWWW.WWW.WWWW.W
+W..W....W....W.....W..W..W.W
+W.*.W.*.WWW.*W.WW.*W*.W..W*W
+W....W..W....W..W..W..W..W.W
+W.WWWWW.WWWW.WWWW.WWW.WWWW.W
+W..........................W
+W.WWWWWWWWWWWWWWWWWWWWWWWW.W
+W..........................W
+W.WWWWWWWWWWW**WWWWWWWWWWW.W
+W.WWWWWWW..........WWWWWWW.W
+W.WWWWWWW.WWW--WWW.WWWWWWW.W
+W.WWWWWWW.WooooooW.WWWWWWW.W
 ..........WooooooW..........
-WWWWWW.WW.WooooooW.WW.WWWWWW
-WWWWWW.WW.WWWWWWWW.WW.WWWWWW
-WWWWWW.WW..........WW.WWWWWW
-WWWWWW.WW.WWWWWWWW.WW.WWWWWW
-WWWWWW.WW.WWWWWWWW.WW.WWWWWW
-W............WW............W
-W.WWWW.WWWWW.WW.WWWWW.WWWW.W
-W*WWWW.WWWWW.WW.WWWWW.WWWW*W
-W...WW................WW...W
-WWW.WW.WW.WWWWWWWW.WW.WW.WWW
-WWW.WW.WW.WWWWWWWW.WW.WW.WWW
-W......WW....WW....WW......W
-W.WWWWWWWWWW.WW.WWWWWWWWWW.W
-W.WWWWWWWWWW.WW.WWWWWWWWWW.W
-W..........................W
+W.WWWWWWW.WooooooW.WWWWWWW.W
+W.WWWWWWW.WWWWWWWW.WWWWWWW.W
+W...*..................*...W
+W.WWWWW.WWWWW..WWWWW.WWWWW.W
+W.W.....W...W..W...W.W.....W
+W.W.....W...W..WWWW..WWW...W
+W.W.....W...W..W.W...W.....W
+W.WWWWW.WWWWW..W..WW.WWWWW.W
+W............**............W
+W.WWWWW.WWWWW..WWWW..WWWWW.W
+W.W.....W...W..W...W.W.....W
+W.W.....W...W..W...W.WWW...W
+W.W.....W...W..W...W.W.....W
+W.WWWWW.WWWWW..WWWW..WWWWW.W
+W...*..................*...W
 WWWWWWWWWWWWWWWWWWWWWWWWWWWW
 `;
 
@@ -53,14 +53,14 @@ class Map {
 
                 switch (symbol) {
                     case 'W':
-                        ctx.strokeStyle = 'gray';
-                        ctx.fillStyle = 'gray';
+                        ctx.strokeStyle = '#FE8F5D';
+                        ctx.fillStyle = '#FE8F5D';
                         ctx.fillRect(x_pos, y_pos, w, h);
                         break;
                     case '.':
-                        ctx.strokeStyle = 'red';
+                        ctx.strokeStyle = '#FFC94B';
                         ctx.lineWidth = 1;
-                        ctx.fillStyle = 'red';
+                        ctx.fillStyle = '#FFC94B';
                         ctx.beginPath();
                         ctx.moveTo(x_pos + (w / 2), y_pos + (h / 2));
                         ctx.arc(
@@ -75,9 +75,9 @@ class Map {
                         ctx.fill();
                         break;
                     case '*':
-                        ctx.strokeStyle = 'blue';
+                        ctx.strokeStyle = '#3CBCC7';
                         ctx.lineWidth = 1;
-                        ctx.fillStyle = 'blue';
+                        ctx.fillStyle = '#3CBCC7';
                         ctx.beginPath();
                         ctx.moveTo(x_pos + (w / 2), y_pos + (h / 2));
                         ctx.arc(
@@ -92,7 +92,7 @@ class Map {
                         ctx.fill();
                         break;
                     case '-':
-                        ctx.strokeStyle = 'orange';
+                        ctx.strokeStyle = 'gray';
                         ctx.lineWidth = 10;
 
                         ctx.beginPath();
@@ -101,12 +101,12 @@ class Map {
                         ctx.stroke();
                         break;
                     case 'o':
-                        ctx.strokeStyle = 'pink';
-                        ctx.fillStyle = 'pink';
+                        ctx.strokeStyle = '#FFD8B2';
+                        ctx.fillStyle = '#FFD8B2';
                         ctx.fillRect(x_pos, y_pos, w, h);
                         break;
                     default:
-                        console.log('Symbol not valid');
+                        console.log('Symbol not valid:', symbol);
                         break;
                 };
                 x_pos += w;
